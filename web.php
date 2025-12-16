@@ -1,0 +1,14 @@
+<?php
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FoodImageController;   // ← 追加
+Route::get('/', function () {
+    return view('welcome');
+});
+//JSON用
+Route::get('/images/json', [FoodImageController::class, 'indexJson'])->name('images.json');
+//一覧表示
+Route::get('/images', [FoodImageController::class, 'index'])->name('images.index');
+//新規作成フォーム表示
+Route::get('/images/create', [FoodImageController::class, 'create'])->name('images.create');
+//新規作成のPOST受付
+Route::post('/images', [FoodImageController::class, 'store'])->name('images.store');
