@@ -2,10 +2,10 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Food-expiry-tracker-App – 新規登録</title>
+    <title>食品登録</title>
 </head>
 <body>
-    <h1>Food-expiry-tracker-App – 新規登録</h1>
+    <h1>食品登録</h1>
     {{-- バリデーションエラー表示--}}
     @if ($errors->any())
         <div style="color: red;">
@@ -20,18 +20,27 @@
     <form action="{{ route('images.store') }}" method="post">
         @csrf
         <div>
-            <label>食品名:</label>
+        <br>
+            <label>・食品名:</label>
             <input type="text" name="food_name" value="{{ old('food_name') }}" required>
         </div>
         <div>
-            <label>賞味期限:</label>
+            <label>・賞味期限:</label>
             <input type="date" name="expiration_date" value="{{ old('expiration_date') }}">
         </div>
         <div>
-            <label>保管場所:</label>
-            <input type="text" name="storage_location" value="{{ old('storage_location') }}">
-        </div>
+    <label>・保管場所:</label>
+    <select name="storage_location">
+        <option value="">選択してください</option>
+        <option value="冷蔵庫" {{ old('storage_location') == '冷蔵庫' ? 'selected' : '' }}>冷蔵庫</option>
+        <option value="冷凍庫" {{ old('storage_location') == '冷凍庫' ? 'selected' : '' }}>冷凍庫</option>
+        <option value="常温"   {{ old('storage_location') == '常温' ? 'selected' : '' }}>常温</option>
+    </select>
+</div>
+        <br>
         <button type="submit">登録</button>
+        <button type="reset">リセット</button>
+        <br><br>
         <a href="{{ route('images.index') }}">一覧に戻る</a>
     </form>
 </body>
