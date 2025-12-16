@@ -12,3 +12,5 @@ Route::get('/images', [FoodImageController::class, 'index'])->name('images.index
 Route::get('/images/create', [FoodImageController::class, 'create'])->name('images.create');
 //新規作成のPOST受付
 Route::post('/images', [FoodImageController::class, 'store'])->name('images.store');
+//通知一覧
+Route::get('/images/note', [FoodImageController::class, 'note'])->name('images.note');
