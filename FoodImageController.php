@@ -36,4 +36,21 @@ class FoodImageController extends Controller
         return redirect()->route('images.index')
                          ->with('success', '新しいレコードを追加しました。');
     }
+    //更新画面表示
+    public function edit(FoodImage $foodImage)
+    {
+        return view('food_images.edit', compact('foodImage'));
+    }
+    //更新
+    public function update(Request $request, FoodImage $foodImage)
+    {
+        $data = $request->validate([
+            'food_name'            => 'required|string|max:255',
+            'expiration_date'      => 'nullable|date',
+            'storage_location'     => 'nullable|string|max:255',
+        ]);
+        $foodImage->update($data);
+        return redirect()->route('images.index')
+                         ->with('success','Updated successfully');
+    }
 }
