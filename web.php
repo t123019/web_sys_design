@@ -14,3 +14,5 @@ Route::get('/images/create', [FoodImageController::class, 'create'])->name('imag
 Route::post('/images', [FoodImageController::class, 'store'])->name('images.store');
 //通知一覧
 Route::get('/images/note', [FoodImageController::class, 'note'])->name('images.note');
+//ルートを自動生成
+Route::resource('food-images', FoodImageController::class);
