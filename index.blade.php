@@ -22,6 +22,7 @@
                     <th>賞味期限</th>
                     <th>保管場所</th>
                     <th>Created At</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -32,6 +33,9 @@
                         <td>{{ $img->expiration_date }}</td>
                         <td>{{ $img->storage_location }}</td>
                         <td>{{ $img->created_at }}</td>
+                        <td>
+                            <a href="{{ route('food-images.edit', $img) }}">編集</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
@@ -40,4 +44,5 @@
         <p>まだデータはありません。</p>
     @endif
 </body>
+
 </html>
