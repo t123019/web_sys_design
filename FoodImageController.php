@@ -54,8 +54,8 @@ class FoodImageController extends Controller
                          ->with('success','Updated successfully');
     }
     // 通知ページ(適宜変更してください)
-    public function show() {
-        return view('food_images.show');
+    public function note() {
+        return view('food_images.note');
     }
     // 削除画面表示(適宜変更してください)
     public function delete(FoodImage $image)
