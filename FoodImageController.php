@@ -53,4 +53,13 @@ class FoodImageController extends Controller
         return redirect()->route('images.index')
                          ->with('success','Updated successfully');
     }
+    // 通知ページ(適宜変更してください)
+    public function show() {
+        return view('food_images.show');
+    }
+    // 削除画面表示(適宜変更してください)
+    public function delete(FoodImage $image)
+    {
+        return view('food_images.delete', compact('image'));
+    }
 }
