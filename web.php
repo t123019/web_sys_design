@@ -14,5 +14,11 @@ Route::get('/images/create', [FoodImageController::class, 'create'])->name('imag
 Route::post('/images', [FoodImageController::class, 'store'])->name('images.store');
 //通知一覧
 Route::get('/images/note', [FoodImageController::class, 'note'])->name('images.note');
+// 編集ページ
+Route::get('/images/edit', [FoodImageController::class, 'edit'])->name('images.edit');
+// 削除確認ページ用
+Route::get('/images/delete', [FoodImageController::class, 'delete'])->name('images.delete');
+
+// 新しいルートはこの上に書いてください
 //ルートを自動生成
 Route::resource('food-images', FoodImageController::class);
