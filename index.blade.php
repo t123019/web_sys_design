@@ -2,18 +2,10 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food-expiry-tracker-App (一覧表示)</title>
     <style>
-        .btn-edit {
-            padding: 4px 8px;
-            border: 1px solid #333;
-            background: #eee;
-            text-decoration: none;
-            color: black;
-        }
-        .btn-edit:hover {
-            background: #ddd;
-        }
+        
     </style>
 </head>
 <body>
@@ -25,7 +17,8 @@
         <li><a href="{{ route('images.create') }}">新しい食品情報を追加</a></li>
         <li><a href="{{ route('images.note') }}">賞味期限情報</a></li>
     </ul>
-    <h2>画像一覧（food_images テーブル）</h2>
+    
+    <h2>食品一覧</h2>
     @if(isset($images) && count($images) > 0)
         <table border="1" cellpadding="5">
             <thead>
@@ -43,10 +36,8 @@
                         <td>{{ $img->expiration_date }}</td>
                         <td>{{ $img->storage_location }}</td>
                         <td>
-                            <a href="{{ route('images.edit', $img->id) }}" class="btn-edit">編集</a>
-                            
                             <!-- 編集ページへ（GET） -->
-                            <form action="{{ route('images.edit', $img->id) }}"
+                            <form action="{{ route('food-images.edit', $img->id) }}"
                                 method="GET"
                                 style="display:inline;">
                                 <button type="submit">編集</button>
@@ -67,10 +58,4 @@
         <p>まだデータはありません。</p>
     @endif
 </body>
-
 </html>
-
-
-
-
-
