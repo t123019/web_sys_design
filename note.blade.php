@@ -97,7 +97,7 @@
             （{{ $food->storage_location }} / {{ $label }}）
 
             @if ($food->days_left < 0)
-                <form action="{{ route('images.destroy', $food) }}"
+                <form action="{{ route('images.note_delete', $food) }}"
                       method="POST"
                       style="display:inline;"
                       onsubmit="return confirm('この食品を削除しますか？');">
@@ -138,7 +138,7 @@
                 {{ $food->food_name }}（{{ $label }}）
 
                 @if ($food->days_left < 0)
-                    <form action="{{ route('images.destroy', $food) }}"
+                    <form action="{{ route('images.note_delete', $food) }}"
                           method="POST"
                           style="display:inline;"
                           onsubmit="return confirm('この食品を削除しますか？');">
