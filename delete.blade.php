@@ -17,14 +17,14 @@
             <li>賞味期限：{{ $foodImage->expiration_date }}</li>
             <li>保管場所：{{ $foodImage->storage_location }}</li>
         </ul>
-        <form method="POST" action="{{ route('food_images.destroy', $foodImage) }}">
+        <form method="POST" action="{{ route('food-images.destroy', $foodImage) }}" style="display:inline;">
             @csrf
             @method('DELETE')
-            <button type="submit">削除する</button>
+            <button type="submit" style="background:blue; color:white;">削除する</button>
         </form>
 
-        <p>
-            <a href="{{ route('images.index') }}">キャンセル</a>
-        </p>
+        <form method="GET" action="{{ route('images.index') }}" style="display:inline;">
+            <button type="submit">キャンセル</button>
+        </form>
     </body>
 </html>
