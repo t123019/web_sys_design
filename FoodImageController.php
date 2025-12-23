@@ -52,7 +52,7 @@ class FoodImageController extends Controller
         ]);
         $foodImage->update($data);
         return redirect()->route('images.index')
-                         ->with('success','更新しました。');
+                         ->with('success','Updated successfully');
     }
     // 通知ページ
     public function note(Request $request)
