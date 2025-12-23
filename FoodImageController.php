@@ -98,4 +98,12 @@ class FoodImageController extends Controller
     {
         return view('food_images.delete', compact('foodImage'));
     }
+    //商品情報を削除
+    public function destroy(FoodImage $foodImage)
+    {
+        $foodImage->delete();
+
+        return redirect()->route('images.index')
+            ->with('success', '食品情報を削除しました。');
+    }
 }
