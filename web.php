@@ -17,7 +17,7 @@ Route::get('/images/note', [FoodImageController::class, 'note'])->name('images.n
 // 編集ページ
 Route::get('/images/edit', [FoodImageController::class, 'edit'])->name('images.edit');
 // 削除確認ページ用
-Route::get('/images/delete', [FoodImageController::class, 'delete'])->name('images.delete');
+Route::get('/images/{foodImage}/delete', [FoodImageController::class, 'delete'])->name('images.delete');
 // 通知削除
 Route::delete('/images/{image}', [FoodImageController::class, 'note_delete'])->name('images.note_delete');
 
