@@ -8,12 +8,13 @@
                 color: red;
             }
             td {
-                width: 100px;
+                width: 200px;
             }
             .large {
                 font-size: larger;
                 font-weight: bold;
                 text-align: center;
+                width: auto;
             }
             .inp {
                 background-color: yellow;
@@ -73,3 +74,4 @@
         
     </body>
 </html>
+
