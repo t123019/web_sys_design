@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Food-expiry-tracker-App (一覧表示)</title>
+    <style>
+        .btn-edit {
+            padding: 4px 8px;
+            border: 1px solid #333;
+            background: #eee;
+            text-decoration: none;
+            color: black;
+        }
+        .btn-edit:hover {
+            background: #ddd;
+        }
+    </style>
 </head>
 <body>
     <h1>Food-expiry-tracker-App</h1>
@@ -31,6 +43,8 @@
                         <td>{{ $img->expiration_date }}</td>
                         <td>{{ $img->storage_location }}</td>
                         <td>
+                            <a href="{{ route('images.edit', $img->id) }}" class="btn-edit">編集</a>
+                            
                             <!-- 編集ページへ（GET） -->
                             <form action="{{ route('images.edit', $img->id) }}"
                                 method="GET"
@@ -55,6 +69,7 @@
 </body>
 
 </html>
+
 
 
 
