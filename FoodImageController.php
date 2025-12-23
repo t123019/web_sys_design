@@ -83,6 +83,15 @@ class FoodImageController extends Controller
 
         return view('food_images.note', compact('foods'));
     }
+    // 期限切れ食品を削除
+    public function destroy(FoodImage $image)
+    {
+        $image->delete();
+
+        return redirect()->route('images.note')
+            ->with('success', '期限切れ食品を削除しました。');
+    }
+    
     // 削除画面表示(適宜変更してください)
     public function delete(FoodImage $image)
     {
