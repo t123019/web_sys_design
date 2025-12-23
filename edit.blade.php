@@ -4,9 +4,6 @@
         <meta charset="utf-8">
         <title>食品編集ページ</title>
         <style>
-            h1 {
-                color: red;
-            }
             td {
                 width: 200px;
             }
@@ -15,9 +12,6 @@
                 font-weight: bold;
                 text-align: center;
                 width: auto;
-            }
-            .inp {
-                background-color: yellow;
             }
             input {
                 width: 150px;
@@ -75,5 +69,6 @@
         
     </body>
 </html>
+
 
 
