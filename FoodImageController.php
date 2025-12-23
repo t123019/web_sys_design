@@ -94,8 +94,8 @@ class FoodImageController extends Controller
     }
     
     // 削除画面表示(適宜変更してください)
-    public function delete(FoodImage $image)
+    public function delete(FoodImage $foodImage)
     {
-        return view('food_images.delete', compact('image'));
+        return view('food_images.delete', compact('foodImage'));
     }
 }
