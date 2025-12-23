@@ -53,9 +53,35 @@ class FoodImageController extends Controller
         return redirect()->route('images.index')
                          ->with('success','Updated successfully');
     }
-    // 通知ページ(適宜変更してください)
-    public function note() {
-        return view('food_images.note');
+    // 通知ページ
+    public function note(Request $request)
+    {
+        $today = Carbon::today();
+
+        $foods = FoodImage::whereNotNull('expiration_date')
+            ->get()
+            ->map(function ($food) use ($today) {
+                $food->days_left = $today->diffInDays(
+                    Carbon::parse($food->expiration_date),
+                    false
+                );
+
+                $food->storage_location = $food->storage_location ?: '未設定';
+
+                return $food;
+            });
+
+        if ($request->get('sort') === 'expiry') {
+            // 全体を賞味期限順
+            $foods = $foods->sortBy('days_left');
+        } else {
+            // 保管場所ごと
+            $foods = $foods
+                ->groupBy('storage_location')
+                ->map(fn ($group) => $group->sortBy('days_left'));
+        }
+
+        return view('food_images.note', compact('foods'));
     }
     // 削除画面表示(適宜変更してください)
     public function delete(FoodImage $image)
