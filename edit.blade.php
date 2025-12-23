@@ -20,6 +20,7 @@
                 background-color: yellow;
             }
             input {
+                width: 150px;
                 font-size: large;
             }
             button, a {
@@ -74,4 +75,5 @@
         
     </body>
 </html>
+
 
