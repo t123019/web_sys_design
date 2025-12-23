@@ -9,10 +9,10 @@
     @if (session('success'))
     <p style="color: green;">{{ session('success') }}</p>
     @endif
-    <p>
-    <a href="{{ route('images.create') }}">＋ 新しい食品情報を追加</a><br>
-    <a href="{{ route('images.note') }}">＋ 賞味期限情報</a>
-</p>
+    <ul>
+        <li><a href="{{ route('images.create') }}">新しい食品情報を追加</a></li>
+        <li><a href="{{ route('images.note') }}">賞味期限情報</a></li>
+    </ul>
     <h2>画像一覧（food_images テーブル）</h2>
     @if(isset($images) && count($images) > 0)
         <table border="1" cellpadding="5">
@@ -47,5 +47,6 @@
 </body>
 
 </html>
+
 
 
