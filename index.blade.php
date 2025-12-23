@@ -11,6 +11,7 @@
     @endif
     <p>
     <a href="{{ route('images.create') }}">＋ 新しい食品情報を追加</a>
+    <a href="{{ route('images.note') }}">＋ 賞味期限情報</a>
 </p>
     <h2>画像一覧（food_images テーブル）</h2>
     @if(isset($images) && count($images) > 0)
@@ -46,3 +47,4 @@
 </body>
 
 </html>
+
