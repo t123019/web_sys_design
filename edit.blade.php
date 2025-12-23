@@ -14,7 +14,6 @@
                 width: auto;
             }
             input {
-                width: 150px;
                 font-size: large;
             }
             button, a {
@@ -69,6 +68,7 @@
         
     </body>
 </html>
+
 
 
 
