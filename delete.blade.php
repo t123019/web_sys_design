@@ -118,7 +118,7 @@
     <body>
     <div class="container">
         <h1>Food-expiry-tracker-App</h1>
-        <h2>食品削除確認 #{{ $foodImage->id }}</h2>
+        <h2>食品削除確認</h2>
 
         <p class="warning">
             以下の食品情報を削除します。<br>
@@ -148,3 +148,4 @@
     </div>
     </body>
 </html>
+
