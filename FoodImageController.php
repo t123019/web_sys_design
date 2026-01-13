@@ -35,7 +35,7 @@ class FoodImageController extends Controller
         FoodImage::create($data);
         // 登録後、一覧にリダイレクト
         return redirect()->route('images.index')
-                         ->with('success', '新しいレコードを追加しました。');
+                         ->with('success', '新しく食品情報を追加しました。');
     }
     //更新画面表示
     public function edit(FoodImage $foodImage)
@@ -52,7 +52,7 @@ class FoodImageController extends Controller
         ]);
         $foodImage->update($data);
         return redirect()->route('images.index')
-                         ->with('success','Updated successfully');
+                         ->with('success','食品情報を更新しました');
     }
     // 通知ページ
     public function note(Request $request)
